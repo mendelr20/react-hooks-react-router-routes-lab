@@ -4,17 +4,17 @@ import { actors } from "../data";
 function Actors() {
   return <div>
     <h1>Actors Page</h1>
-    {actors.map(({name,movies})=>(
-        <p>
+    {actors.map(({name,movies}, i)=>(
+        <div key={i}>
           {name}
           <ul>
-            {movies.map((item)=>(
-              <li>
+            {movies.map((item, i)=>(
+              <li key={i}>
                 {item}
               </li>
             ))}
           </ul>
-        </p>  
+        </div>  
       ))}
   </div>;
 }
